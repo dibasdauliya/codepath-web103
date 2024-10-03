@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main></main>
+    <script>
+      function getIdFromUrl() {
+        const queryString = window.location.search;
+        const id = queryString.substring(1); // Get the part after '?'
+        return id;
+      }
+
+      async function getDog() {
+        const id = getIdFromUrl();
+        console.log({ id });
+
+        const response = await fetch(`/dogs/${id}`);
+        const dog = await response.json();
+        console.log({ dog });
+        createUI(dog);
+      }
+
+      function createUI(dog) {
+        const main = document.querySelector("main");
+        main.innerHTML = `
+        <article>
+          <header>${dog.name}</header>
+          <p>Audience: ${dog.audience}</p>
+          <p>Pricepoint: ${dog.pricepoint}</p>
+          <img src="${dog.image}" alt="${dog.title}" />
+          <p>${dog.description}</p>
+          <footer>
+          <p>Submitted by: ${dog.submittedby}</p>
+          <p>Submitted on: ${dog.submittedon}</p>  
+          </footer>
+        </article>
+      `;
+      }
+
+      getDog();
+    </script>
+  </body>
+</html>
