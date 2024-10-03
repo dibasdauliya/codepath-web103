@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <main></main>
+    <script>
+      async function getGuide() {
+        const id = window.location.pathname.split("/").pop();
+        const response = await fetch(`/lists/${id}`);
+        const guide = await response.json();
+        createUI(guide);
+      }
+
+      function createUI(guide) {
+        const main = document.querySelector("main");
+        main.innerHTML = `
+        <article>
+          <header>${guide.title}</header>
+          <p>${guide.text}</p>
+          <p><span>${guide.category}</span></p>
+          <img src="${guide.image}" alt="${guide.title}" />
+          <footer>Submitted by: ${guide.submittedBy}</footer>
+        </article>
+      `;
+      }
+
+      getGuide();
+    </script>
+  </body>
+</html>

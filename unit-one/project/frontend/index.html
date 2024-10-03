@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      a, p {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Guide to Starting Your Business</h1>
+
+    <main></main>
+  </body>
+
+  <script>
+    async function getList() {
+      const response = await fetch("/lists");
+      const data = await response.json();
+      createUI(data.lists);
+    }
+  
+    function createUI(lists) {
+      const main = document.querySelector("main");
+  
+      lists.forEach((content) => {
+        const cardTempl = `
+        <a href="/guide/${content.id}">
+          <article>
+          <header>${content.title}</header>
+          <p>${content.text}</p>
+          <p><span>${content.category}</span></p>
+          <img src="${content.image}" alt="${content.title}" />
+          <footer>Submitted by: ${content.submittedBy}</footer>
+        </article>
+        </a>
+        `;
+  
+        main.innerHTML += cardTempl;
+      });
+    }
+  
+    getList();
+  </script>
+  </html>
+</html>
