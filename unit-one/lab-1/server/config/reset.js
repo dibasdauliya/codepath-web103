@@ -1,5 +1,6 @@
-import giftData from "../data/gifts.js";
+import "./dotenv.js";
 import { pool } from "./database.js";
+import giftData from "../data/gifts.js";
 
 async function createGiftsTable() {
   const createTableQuery = `
