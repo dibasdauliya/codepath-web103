@@ -1,6 +1,6 @@
-# WEB103 Project 2 - _Name of App Here_
+# WEB103 Project 2 - My Wonderful Dogs
 
-Submitted by: **Your name here**
+Submitted by: **Dibas Dauliya**
 
 About this web app: **App description here**
 
