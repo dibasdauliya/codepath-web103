@@ -1,0 +1,46 @@
+/* Events.css */
+
+.events-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.events-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.events-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.events-list li:hover {
+  background-color: #f1e3e3;
+}
+
+.events-list h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #555;
+}
+
+.events-list p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888;
+}
