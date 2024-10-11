@@ -1,8 +1,8 @@
-# WEB103 Project 3 - _Name of App Here_
+# WEB103 Project 3 - _Events and Locations_
 
 Submitted by: **Dibas Dauliya**
 
-About this web app: **App description here**
+About this web app: **shows events and locations**
 
 Time spent: **5** hours
 
@@ -14,7 +14,7 @@ The following **required** functionality is completed:
 
 - [x] **The web app uses React to display data from the API**
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured Events table**
-  - [ ] **NOTE: Your GIF or a screenshot added to this README must include a view of your Railway database that shows the contents of the table used by your app**
+  - [x] **NOTE: Your GIF or a screenshot added to this README must include a view of your Railway database that shows the contents of the table used by your app**
 - [x] **The web app displays the title of the app**
 - [x] **A visual interface allows the user to select a Location they would like to view**
 - [x] **Clicking on a Location shows a list of all items from the Events table that corresponds to that Location**
@@ -50,7 +50,7 @@ Describe any challenges encountered while building the app or any additional con
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2024 Dibas Dauliya
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
